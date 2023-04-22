@@ -1,0 +1,35 @@
+# The image will be at ghcr.io/yourusername/name
+name: kinoite-main
+
+# The native container image to build on top of
+# images. 
+# Warning: Non-uBlue images might function unexpectly
+base-container: ghcr.io/ublue-os/kinoite-main
+
+# What fedora version to use. Use an explicit version or `latest`.
+# If you use `latest`, you will be automatically updated
+# to the next major version assuming the image you're using as your base container
+# builds with the tag (all uBlue images do this). 
+fedora-version: latest
+
+# This description will be visible in the container metadata
+description: Personal ublue image
+
+# These rpms will be installed from the fedora repository
+# using rpm-ostree and will be preinstalled in the final image
+rpms:
+  - python3-pip # needed for yafti (the first boot installer)
+  - zsh
+  - latte-dock
+  - materia-kde
+  - materia-kde-sddm
+  - yakuake
+
+# These Flatpaks (from flathub) will be available for install on boot
+# this is just an example selection.
+# If you leave this empty you can use yafti for post-boot installation
+flatpaks:
+  - org.mozilla.firefox
+  - org.libreoffice.LibreOffice
+  - com.github.tchx84.Flatseal
+  - com.visualstudio.code
