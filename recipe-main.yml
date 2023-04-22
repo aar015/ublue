@@ -10,7 +10,7 @@ base-container: ghcr.io/ublue-os/kinoite-main
 # If you use `latest`, you will be automatically updated
 # to the next major version assuming the image you're using as your base container
 # builds with the tag (all uBlue images do this). 
-fedora-version: latest
+fedora-version: 38
 
 # This description will be visible in the container metadata
 description: Personal ublue image
@@ -19,6 +19,7 @@ description: Personal ublue image
 # using rpm-ostree and will be preinstalled in the final image
 rpms:
   - python3-pip # needed for yafti (the first boot installer)
+  - libadwaita # need for yafti (the first boot installer)
   - zsh
   - latte-dock
   - materia-kde
@@ -33,3 +34,4 @@ flatpaks:
   - org.libreoffice.LibreOffice
   - com.github.tchx84.Flatseal
   - com.visualstudio.code
+  - md.obsidian.Obsidian
